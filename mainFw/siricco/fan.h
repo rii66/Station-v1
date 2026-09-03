@@ -8,8 +8,8 @@ class Fan {
 public:
   void begin() {
     // ESP32 core 3.x ke atas
-    ledcAttach(FAN_PIN, FAN_PWM_FREQ, FAN_PWM_RES);
-    ledcWrite(FAN_PIN, 0);
+    ledcAttach(PIN_FAN_PWM, FAN_PWM_FREQ, FAN_PWM_RES);
+    ledcWrite(PIN_FAN_PWM, 0);
     current_speed = 0;
   }
 
@@ -20,12 +20,12 @@ public:
       speed = FAN_MIN_SPEED;
     }
 
-    ledcWrite(FAN_PIN, speed);
+    ledcWrite(PIN_FAN_PWM, speed);
     current_speed = speed;
   }
 
   void off() {
-    ledcWrite(FAN_PIN, 0);
+    ledcWrite(PIN_FAN_PWM, 0);
     current_speed = 0;
   }
 
