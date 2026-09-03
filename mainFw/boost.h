@@ -1,0 +1,11 @@
+#ifndef BOOST_H
+#define BOOST_H
+
+void startBoost();
+void updateBoost();
+
+extern bool boostMode;
+extern int boostTimeSec;
+extern int boostTemp;
+
+#endif
